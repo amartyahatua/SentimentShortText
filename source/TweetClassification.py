@@ -62,7 +62,6 @@ class SentimentAnalysisNLTK:
                 for i in range(len(self.text)):
                     
                     findSentimentText = self.text[i]
-                    #print(findSentimentText)
                     findSentimentText = encoding.smart_str(findSentimentText, encoding='ascii', errors='ignore')
                     
                     findSentimentText = findSentimentText.lower()
@@ -99,16 +98,9 @@ class SentimentAnalysisNLTK:
             accuracy = (self.correctScore/float(total))
             print(accuracy)
             
-    
-#         if(len(self.formatedText)>2):
-#             svmClass = SvmClassification()
-#             svmClass.classify(self.formatedText, self.score)
-                
-#             frames = [txtType, text, txtScore, originalScore, positive, negative, neutral, compound]
-#             result = pd.concat(frames,axis=1)
-#             result.to_csv("C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\marged\\result.csv")
+            result.to_csv("..\\shorttext\\labled\\marged\\result.csv")
             
         
-path = "C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\not_marged\\"
+path = "..\\shorttext\\labled\\not_marged\\"
 sentiAnalysis = SentimentAnalysisNLTK()
 sentiAnalysis.getSentiments(path)  

@@ -66,7 +66,7 @@ class sentiment_feature:
             accuracy = classifier_rmf.score(test_data,test_labels)
             print(accuracy)
         
-path = "C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\not_marged_result\\"    
+path = "..\\shorttext\\labled\\not_marged_result\\"    
         
 sentiment = sentiment_feature()
 sentiment.getSentiment(path)

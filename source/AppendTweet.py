@@ -11,7 +11,7 @@ scoreList = list()
 
 
 
-df = pd.read_csv('C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\USA_02_14_01.csv')
+df = pd.read_csv('..\\shorttext\\labled\\USA_02_14_01.csv')
 dfList = df.values.tolist()
 
 for i in range(len(dfList)):
@@ -36,4 +36,4 @@ scoreListDf = pd.DataFrame(scoreList)
 result = pd.concat([textTypeDf,textListDf,scoreListDf],ignore_index=True,axis=1)
 print(result)
 
-result.to_csv("C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\USA_02_14_01_result.csv", sep=',')
+result.to_csv("..\\shorttext\\labled\\USA_02_14_01_result.csv", sep=',')

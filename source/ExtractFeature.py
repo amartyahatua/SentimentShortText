@@ -280,23 +280,14 @@ class ExtractFeature:
                       NNPListDf,NNPSListDf,PDTListDf,POSListDf,PRPListDf,PRPDListDf,RBListDf,RBRListDf,RBSListDf,RPListDf,TOListDf,UHListDf,
                       VBListDf,VBDListDf,VBGListDf,VBNListDf,VBPListDf,VBZListDf,WDTListDf,WPListDf,WPDListDf,WRBListDf,scoreDf]
             
-            #frames = [self.directMessageList,self.urlChkList,self.hashTagList,self.questionMarkList,self.exclamationMarkList,self.neutralList,self.negativeEmoticon,self.positiveEmoticon,self.combinedList,self.CCList,self.CDList,self.DTList,self.EXList,self.FWList,self.INList,self.JJList,self.JJRList,self.JJSList,self.LSList,self.MDList,self.NNList,self.NNSList,self.NNPList,self.NNPSList,self.PDTList,self.POSList,self.PRPList,self.PRPDList,self.RBList,self.RBRList,self.RBSList,self.RPList,self.TOList,self.UHList,self.VBList,self.VBDList,self.VBGList,self.VBNList,self.VBPList,self.VBZList,self.WDTList,self.WPList,self.WPDList,self.WRBList]
-            
-#             print(frames)
-#             svm_classification = SvmClassification()
-#             svm_classification.classify(frames, scoreDf)
             
             
             result = pd.concat(frames,axis=1)
-            result.to_csv("C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\not_marged_result\\"+file.split(".")[0]+".csv")
+            result.to_csv("..\\shorttext\\labled\\not_marged_result\\"+file.split(".")[0]+".csv")
 
-            print("C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\not_marged_result\\"+file.split(".")[0]+".csv")
+            print("..\\shorttext\\labled\\not_marged_result\\"+file.split(".")[0]+".csv")
 
-path = "C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\not_marged\\"
+path = "..\\shorttext\\labled\\not_marged\\"
 
-# for file in dirs:
-#     fullpath = path+file
-#     print(fullpath)
-    
 extrctFeature = ExtractFeature()
 extrctFeature.features(path) 

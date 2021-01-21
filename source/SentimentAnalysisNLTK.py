@@ -38,7 +38,6 @@ class SentimentAnalysisNLTK:
                     
             for i in range(len(text)):
                 findSentimentText = text[i]
-                #print(findSentimentText)
                 findSentimentText = encoding.smart_str(findSentimentText, encoding='ascii', errors='ignore')
                 
                 findSentimentText = findSentimentText.lower()
@@ -54,34 +53,8 @@ class SentimentAnalysisNLTK:
                
             
                 
-#                 sentimentCal = Sentiment()
-#                 score = sentimentCal.getSentimentNLTK(findSentimentText)
-#                 self.positive.append(score[2])
-#                 self.negative.append(score[1])
-#                 self.neutral.append(score[0])
-#                 self.compound.append(score[3])
-#                 
-#                 if(score[3]<0.5):
-#                     self.calculatedScore.append(-1)
-#                 else:
-#                     self.calculatedScore.append(-1)
-#             text = pd.DataFrame(self.text)
-#             txtType = pd.DataFrame(self.type)
-#             txtScore = pd.DataFrame(self.score)
-#             positive = pd.DataFrame(self.positive)
-#             negative = pd.DataFrame(self.negative)
-#             neutral = pd.DataFrame(self.neutral)
-#             compound = pd.DataFrame(self.compound)
-#             originalScore = pd.DataFrame(self.originalScore)
-            
-#             svmClass = SvmClassification()
-#             svmClass.classify(formatedText, originalScore)
-            
-#             frames = [txtType, text, txtScore, originalScore, positive, negative, neutral, compound]
-#             result = pd.concat(frames,axis=1)
-#             result.to_csv("C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\marged\\result.csv")
-            
+
         
-path = "C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\labled\\marged\\"
+path = "..\\shorttext\\labled\\marged\\"
 sentiAnalysis = SentimentAnalysisNLTK()
 sentiAnalysis.getSentiments(path)  

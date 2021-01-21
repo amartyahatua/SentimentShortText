@@ -31,8 +31,8 @@ class TweetAndRetweet:
         self.typeList = list()
         self.idList = list()
         self.keyList = list()
-        self.path = "C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\tweets\\"
-        self.outpath = 'C:\\Users\\ahatua\\Desktop\\usm\\research\\shorttext\\getinfo\\'
+        self.path = "..\\shorttext\\tweets\\"
+        self.outpath = '..\\shorttext\\getinfo\\'
         
     def getTweetList(self,path):
         with open(path) as json_data:
@@ -104,16 +104,15 @@ class TweetAndRetweet:
                             self.tweetDict[tempID] = tempList
                         else:
                             tempList = list()
-                            #tempList.append("Reply")
                             tempList.append(data[i]["text"])
                             self.tweetDict[tempID] = tempList
                     
                 
     def getTweets(self):
-        CONSUMER_KEY = '0zplvEgFyR9vrn5JPTB6TptBV'
-        CONSUMER_SECRET = 'lV7fGEZ6vXqJ8c4fFyiCvwqxxm9LWgdEl0WEydjvCmuSOlrwXJ'
-        ACCESS_KEY = '813832637383053318-RMAyJIwV5jhcjF9oyJh7qXdmOYZIWhL'
-        ACCESS_SECRET = '0iukegnY3pu5ETnfFu4Mv1rPk8Rv3ezyHeepaF8xml3zk'
+        CONSUMER_KEY = ''
+        CONSUMER_SECRET = ''
+        ACCESS_KEY = ''
+        ACCESS_SECRET = ''
         
         auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
         auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -131,7 +130,6 @@ class TweetAndRetweet:
                 self.tweetString.append(text)
         except:
             print("Status is not present")
-            #self.replyStringList.append(self.tweetDict[key])
             
             
     def getFullReplyText(self):
@@ -171,10 +169,9 @@ class TweetAndRetweet:
             with open(path_parse,'w', newline='') as csvfile:
                 writer = csv.writer(csvfile, delimiter=",")
                 writer.writerow(["keyList","typeList","fullText"])
-                #try:
+
                 for row in rows:
                     writer.writerow(row)
-                #
             
 tweetAndRetweet = TweetAndRetweet()
 tweetAndRetweet.TweetAndRetweetFunction()
